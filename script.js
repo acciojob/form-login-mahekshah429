@@ -1,16 +1,15 @@
 function getFormvalue(event) {
   event.preventDefault(); // Prevent form from submitting normally
 
-  // Get trimmed input values
-  const firstName = document.querySelector('input[name="fname"]').value.trim();
-  const lastName = document.querySelector('input[name="lname"]').value.trim();
+  const form = document.getElementById("nameForm");
+  const fname = form.fname.value.trim();
+  const lname = form.lname.value.trim();
 
-  // Check for empty fields (optional edge case handling)
-  if (!firstName && !lastName) {
-    alert("Please enter your name.");
+  if (!fname && !lname) {
+    alert("Please enter your first and last name.");
     return;
   }
 
-  // Show full name in alert
-  alert(`${firstName} ${lastName}`);
+  const fullName = `${fname} ${lname}`.trim();
+  alert(fullName);
 }
