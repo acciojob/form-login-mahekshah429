@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Form Login - Full Name Alert</title>
+  <title>📝 Login Form</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="form-container">
-    <h2>📝 Enter Your Name</h2>
-    <form id="nameForm" onsubmit="getFormvalue(event)">
-      <input type="text" name="fname" placeholder="First Name" required />
-      <input type="text" name="lname" placeholder="Last Name" required />
+    <h2>Login to Metaverse</h2>
+    <form onsubmit="return getFormvalue()" id="loginForm">
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" name="fname" placeholder="Enter First Name" />
+      </div>
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" name="lname" placeholder="Enter Last Name" />
+      </div>
       <button type="submit">Submit</button>
     </form>
   </div>

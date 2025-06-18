@@ -1,15 +1,23 @@
-function getFormvalue(event) {
-  event.preventDefault(); // Prevent form from submitting normally
+function getFormvalue() {
+  const form = document.getElementById("loginForm");
 
-  const form = document.getElementById("nameForm");
-  const fname = form.fname.value.trim();
-  const lname = form.lname.value.trim();
+  let fname = form.fname.value.trim();
+  let lname = form.lname.value.trim();
 
+  // Handle empty input
   if (!fname && !lname) {
     alert("Please enter your first and last name.");
-    return;
+    return false;
+  } else if (!fname) {
+    alert("First name is required.");
+    return false;
+  } else if (!lname) {
+    alert("Last name is required.");
+    return false;
   }
 
-  const fullName = `${fname} ${lname}`.trim();
+  const fullName = `${fname} ${lname}`;
   alert(fullName);
+
+  return false; // prevent actual form submission
 }
